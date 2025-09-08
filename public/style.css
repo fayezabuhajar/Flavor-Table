@@ -52,3 +52,56 @@ main {
     height: auto;
     border-radius: 8px;
 }
+
+ .modal {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+    }
+    .modal-content {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        width: 400px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    .modal-content label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+        color: #1f9e45;
+    }
+    .modal-content input, .modal-content textarea {
+        width: 100%;
+        padding: 6px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+    }
+    .save-update {
+        background-color: #28a745;
+        color: white;
+        padding: 8px 15px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    #cancel-update {
+        background-color: #dc3545;
+        color: white;
+        padding: 8px 15px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }

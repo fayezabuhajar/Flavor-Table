@@ -18,7 +18,40 @@
         <h1>My Favorite Recipes</h1>
         <div id="results-container">
             </div>
+
+        <!-- نافذة تعديل الوصفة -->
+<div id="updateModal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <h2 style="color: #1f9e45;">Update Recipe</h2>
+        <form id="updateForm">
+            <input type="hidden" id="update-id" />
+            <label>Title:</label>
+            <input type="text" id="update-title" required />
+
+            <label>Image URL:</label>
+            <input type="text" id="update-image" />
+
+            <label>Instructions:</label>
+            <textarea id="update-instructions"></textarea>
+
+            <label>Ingredients (comma separated):</label>
+            <input type="text" id="update-ingredients" />
+
+            <label>Ready In (minutes):</label>
+            <input type="number" id="update-readyin" />
+
+            <div class="buttons">
+                <button type="submit" class="save-update">Save</button>
+                <button type="button" id="cancel-update">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
