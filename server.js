@@ -100,23 +100,28 @@ app.use((req, res) => {
     res.status(404).send('Page not found <a href="/">Go to Home</a>');
 });
 
-pool.connect()
-    .then((clinet) => {
-        return clinet
-            .query('SELECT current_database(), current_user')
-            .then((res) => {
-                clinet.release();
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 
-                const dbName = res.rows[0].current_database;
-                const dbUser = res.rows[0].current_user;
-
-                console.log(`Connected to database: ${dbName} as user: ${dbUser}`);
-                console.log(`Server is running on http://localhost:${PORT}`);
-            });
-    })
-    .then(() => {
-        app.listen(PORT);
-    })
-    .catch((err) => {
-        console.error('Error connecting to the database:', err);
 });
+
+
+// pool.connect()
+//     .then((clinet) => {
+//         return clinet
+//             .query('SELECT current_database(), current_user')
+//             .then((res) => {
+//                 clinet.release();
+
+//                 const dbName = res.rows[0].current_database;
+//                 const dbUser = res.rows[0].current_user;
+
+//                 console.log(`Connected to database: ${dbName} as user: ${dbUser}`);
+//             });
+//     })
+//     .then(() => {
+       
+//     })
+//     .catch((err) => {
+//         console.error('Error connecting to the database:', err);
+// });
